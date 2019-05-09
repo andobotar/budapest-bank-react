@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Classes and State</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+<body>
+
+    <div id="root"></div>
+
+<script type="text/babel">
+
+    class Toggle extends React.Component {
+
+        state = {
+            toggled: false,
+        };
+
+        toggle = () => {
+            this.setState((prevState, props) => {
+                return {toggled: !prevState.toggled};
+            });
+        };
+
+        render() {
+            return (
+                    <div>
+                        <button onClick={this.toggle}>Toggle</button>
+                        {this.state.toggled && <p>Hidden toggle-able text</p>}
+                    </div>
+            );
+        }
+    }
+
+    ReactDOM.render(<Toggle/>, root);
+
+</script>
+</body>
+</html>
+
+<!--
+    TODO:
+    1 Try to change the text on the button to match what it's about to do (e.g. "Toggle on" or "Toggle off").
+    2 Make your own class-based component with state, which should contain a button and an <h2> element, which 
+        displays a new random number between 0 and 100 after each click.
+-->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSX</title>
+    <!-- These scripts will make React and ReactDOM globally available. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.7.0-alpha.2/umd/react.development.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.7.0-alpha.2/umd/react-dom.production.min.js" crossorigin></script>
+
+    <!-- This will let us write JSX and ES6 in a script tag with a special type of "text/babel" -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+</head>
+<body>
+
+    <div id="root"></div>
+
+<script type="text/babel">
+
+    // This next line is optional - React will find the element with the id 'root' even if we don't explicitly 'get' it:
+    // const root = document.getElementById("root");
+
+    const title = React.createElement(
+        'h1',
+        {className: 'main-title'},
+        React.createElement('span', {}, 'Hello world!')
+    );
+    
+    ReactDOM.render(title, root);
+
+</script>
+</body>
+</html>
+
+
+<!-- TODO: Try rewriting the `React.createElement` call using JSX. You should see the same result on the page.-->

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Picture</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function Picture() {
+            return <img src='https://i.imgur.com/xFSJT8O.jpg' />;
+        }
+
+        function Container() {
+            const imageUrl = 'https://i.imgur.com/xFSJT8O.jpg';
+            return <Picture />
+        }
+
+        ReactDOM.render(<Container />, root);
+
+
+    </script>
+</body>
+</html>
+
+<!--
+    TODO:
+    1. Work in components_intro.html. We have defined two components for you, Container and Picture.
+    2. Pass the URL from the Container to the Picture as a prop.
+    3. Extract that URL in the Picture component and use it as the src of the <img> tag.
+    4. You should see a beautiful picture appear in your browser.
+    5. Make sure there are no error or warning messages in the console of your browser.
+-->
