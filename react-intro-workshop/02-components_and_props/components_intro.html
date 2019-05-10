@@ -13,13 +13,13 @@
 
     <script type="text/babel">
 
-        function Picture() {
-            return <img src='https://i.imgur.com/xFSJT8O.jpg' />;
+        function Picture(props) {
+            return <img src={props.url} alt="szeged" />;
         }
 
         function Container() {
             const imageUrl = 'https://i.imgur.com/xFSJT8O.jpg';
-            return <Picture />
+            return <Picture url={imageUrl} />
         }
 
         ReactDOM.render(<Container />, root);
